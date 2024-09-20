@@ -51,8 +51,8 @@ class _MyTableDataPageState extends State<MyTableDataPage> {
       // Calculate total and percentage
       total = urduMarks + englishMarks + computerMarks;
       percentage = (total * 100) / 300; // Assuming 300 is the max total 
-      if(urduMarks >100 || englishMarks>100||computerMarks>100){
-        Fluttertoast.showToast(msg:"invalid numbers");
+      if(urduMarks <0 || urduMarks >100 || englishMarks<0 || englishMarks>100||computerMarks<0 || computerMarks>100){
+        Fluttertoast.showToast(msg:"invalid numbers",timeInSecForIosWeb: 6);
       }else{
 
       if(percentage >= 90) {
@@ -67,6 +67,9 @@ class _MyTableDataPageState extends State<MyTableDataPage> {
       else{
         grade="Fail";
       }
+       urduMarks =0;
+        englishMarks=0;
+        computerMarks=0;
       }
       // Trigger UI update
       setState(() {});
