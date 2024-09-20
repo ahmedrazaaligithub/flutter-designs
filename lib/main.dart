@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:chat_app/dashboard.dart';
 import 'package:chat_app/home.dart';
+import 'package:chat_app/listBuilder.dart';
 import 'package:chat_app/login.dart';
 import 'package:chat_app/tableData.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Timer(
         Duration(seconds: 1),
         () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (a) => TableData())));
+            context, MaterialPageRoute(builder: (a) => ChatList())));
   }
 
   @override
